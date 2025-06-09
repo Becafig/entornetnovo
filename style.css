@@ -17,8 +17,8 @@
 
 @font-face {
     font-family: 'omicron'; 
-    src: url('/font/Omicron.ttf') format('woff2'), 
-         url('/font/Omicron.ttf') format('woff'); 
+    src: url('font/Omicron.ttf') format('woff2'), 
+         url('font/Omicron.ttf') format('woff'); 
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
