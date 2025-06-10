@@ -9,29 +9,25 @@
     const planSelect = document.getElementById('signup-plan');
     const submitButton = signupForm.querySelector('button[type="submit"]');
 
-    // Array com todos os campos que precisam de validação
     const fieldsToValidate = [nameInput, cpfInput, addressInput, phoneInput, planSelect];
 
-    // 2. Desabilita o botão de envio inicialmente
     submitButton.disabled = true;
 
     // 3. Função para verificar se todos os campos estão preenchidos
     const checkFormValidity = () => {
-        // A função 'every' verifica se TODOS os elementos do array passam no teste
+
         const isFormValid = fieldsToValidate.every(field => field.value.trim() !== '');
         // Habilita o botão APENAS se o formulário for válido
         submitButton.disabled = !isFormValid;
     };
 
-    // 4. Adiciona um "ouvinte" de eventos para cada campo do formulário
-    // Ele vai chamar a função de validação sempre que o usuário digitar ou alterar um campo
     fieldsToValidate.forEach(field => {
         field.addEventListener('input', checkFormValidity);
     });
 
     // 5. Adiciona o "ouvinte" principal para o evento de SUBMISSÃO do formulário
     signupForm.addEventListener('submit', (event) => {
-        // Previne o comportamento padrão do formulário (que seria recarregar a página)
+
         event.preventDefault();
 
         // Salva os dados do cliente em um objeto (variável)
@@ -43,11 +39,6 @@
             plan: planSelect.value
         };
 
-        // Simula o salvamento no localStorage (opcional)
-        // localStorage.setItem('lastSignupAttempt', JSON.stringify(customerData));
-        // console.log('Dados salvos no objeto:', customerData);
-
-        // Monta o corpo do e-mail de forma organizada
         const emailBody = `
 Olá, equipe Entornet Fibra!
 
@@ -132,7 +123,7 @@ Obrigado(a)!
 
         // --- LÓGICA DAS FEATURES GEMINI ---
 
-        const apiKey = "AIzaSyAzhXIpf500NeZdfl44Qjh5k7epNaa8WS8"; // Deixe em branco, será gerenciado pelo ambiente
+        const apiKey = "AIzaSyAzhXIpf500NeZdfl44Qjh5k7epNaa8WS8"; 
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
         function showResult(element, text) {

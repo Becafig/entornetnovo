@@ -10,8 +10,7 @@
     
     --font-family: 'Poppins', sans-serif;
 
-    --gradient-yellow: linear-gradient(45deg, #FFC107, #FFD54F); /* Novo gradiente */
-    --gradient-blue: linear-gradient(45deg, #0A2A5D, #1a4a9c);
+    --gradient-yellow: linear-gradient(45deg, #FFC107, #FFD54F);
     --gradient-purple: linear-gradient(45deg, #fae700, #ff0000);
 }
 
@@ -52,7 +51,7 @@ section { padding: 60px 0; }
 .hero-section::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255, 193, 7, 0.1), transparent 70%); z-index: 0; }
 .hero-content { display: flex; align-items: center; gap: 40px; position: relative; z-index: 1; }
 .hero-text { flex: 1; }
-.hero-text h1 { font-size: 3.8rem; font-weight: 800; margin-bottom: 20px; letter-spacing: -1.5px; }
+.hero-text h1 { font-size: 3.1rem; font-weight: 800; margin-bottom: 20px; letter-spacing: -1.5px; }
 .hero-text p { font-size: 1.2rem; color: var(--text-gray); margin-bottom: 40px; max-width: 500px; }
 .hero-buttons { display: flex; gap: 15px; align-items: center; }
 .hero-image { flex: 0 0 50%; text-align: center; }
@@ -153,7 +152,7 @@ section { padding: 60px 0; }
 .ssl-badge { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; }
 
 /* ESTILOS DO CHATBOT */
-.chatbot-icon { position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; background: var(--gradient-blue); color: white; display: flex; justify-content: center; align-items: center; border-radius: 50%; font-size: 1.8rem; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000; transition: transform 0.3s ease; }
+.chatbot-icon { position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; background: var(--blue);; color: white; display: flex; justify-content: center; align-items: center; border-radius: 50%; font-size: 1.8rem; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000; transition: transform 0.3s ease; }
 .chatbot-icon:hover { transform: scale(1.1); }
 .chat-window { position: fixed; bottom: 100px; right: 25px; width: 350px; max-width: 90vw; height: 500px; background: var(--white); border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: flex; flex-direction: column; overflow: hidden; z-index: 1001; opacity: 0; transform: translateY(20px); transition: opacity 0.3s ease, transform 0.3s ease; pointer-events: none; }
 .chat-window.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
