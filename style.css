@@ -121,7 +121,7 @@ section { padding: 60px 0; }
 .diagnostics-section h2 i { color: var(--purple); margin-right: 10px; }
 #diagnostics-form { display: flex; flex-direction: column; max-width: 700px; margin: 0 auto; gap: 15px; }
 #diagnostics-form textarea { width: 100%; padding: 15px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; font-family: var(--font-family); resize: vertical; }
-.customer-area { background: var(--gradient-blue); color: var(--white); padding: 60px 0; }
+.customer-area { background-color: var(--blue); color: var(--white); padding: 60px 0; }
 .customer-content { display: flex; align-items: center; gap: 30px; }
 .customer-icon { font-size: 4rem; }
 .customer-info { flex-grow: 1; }
