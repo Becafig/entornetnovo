@@ -1,3 +1,89 @@
+                document.addEventListener('DOMContentLoaded', () => {
+
+    // 1. Seleciona os elementos do formulário e o botão
+    const signupForm = document.getElementById('signup-form');
+    const nameInput = document.getElementById('signup-name');
+    const cpfInput = document.getElementById('signup-cpf');
+    const addressInput = document.getElementById('signup-address');
+    const phoneInput = document.getElementById('signup-phone');
+    const planSelect = document.getElementById('signup-plan');
+    const submitButton = signupForm.querySelector('button[type="submit"]');
+
+    // Array com todos os campos que precisam de validação
+    const fieldsToValidate = [nameInput, cpfInput, addressInput, phoneInput, planSelect];
+
+    // 2. Desabilita o botão de envio inicialmente
+    submitButton.disabled = true;
+
+    // 3. Função para verificar se todos os campos estão preenchidos
+    const checkFormValidity = () => {
+        // A função 'every' verifica se TODOS os elementos do array passam no teste
+        const isFormValid = fieldsToValidate.every(field => field.value.trim() !== '');
+        // Habilita o botão APENAS se o formulário for válido
+        submitButton.disabled = !isFormValid;
+    };
+
+    // 4. Adiciona um "ouvinte" de eventos para cada campo do formulário
+    // Ele vai chamar a função de validação sempre que o usuário digitar ou alterar um campo
+    fieldsToValidate.forEach(field => {
+        field.addEventListener('input', checkFormValidity);
+    });
+
+    // 5. Adiciona o "ouvinte" principal para o evento de SUBMISSÃO do formulário
+    signupForm.addEventListener('submit', (event) => {
+        // Previne o comportamento padrão do formulário (que seria recarregar a página)
+        event.preventDefault();
+
+        // Salva os dados do cliente em um objeto (variável)
+        const customerData = {
+            name: nameInput.value.trim(),
+            cpf: cpfInput.value.trim(),
+            address: addressInput.value.trim(),
+            phone: phoneInput.value.trim(),
+            plan: planSelect.value
+        };
+
+        // Simula o salvamento no localStorage (opcional)
+        // localStorage.setItem('lastSignupAttempt', JSON.stringify(customerData));
+        // console.log('Dados salvos no objeto:', customerData);
+
+        // Monta o corpo do e-mail de forma organizada
+        const emailBody = `
+Olá, equipe Entornet Fibra!
+
+Gostaria de solicitar a contratação de um novo plano. Seguem meus dados para o cadastro:
+
+----------------------------------------------------
+- Nome Completo: ${customerData.name}
+- CPF: ${customerData.cpf}
+- Endereço Completo: ${customerData.address}
+- Telefone (WhatsApp): ${customerData.phone}
+- Plano Escolhido: ${customerData.plan}
+----------------------------------------------------
+
+Aguardo o contato para finalizarmos a instalação.
+
+Obrigado(a)!
+        `;
+
+        // Define o e-mail do destinatário e o assunto
+        const recipientEmail = 'atendimento@entornet.com.br';
+        const emailSubject = 'Solicitação de Contratação - Pelo Site';
+
+        // Codifica o assunto e o corpo do e-mail para serem usados em uma URL
+        const encodedSubject = encodeURIComponent(emailSubject);
+        const encodedBody = encodeURIComponent(emailBody.trim());
+
+        // Cria a URL final para o Gmail
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipientEmail}&su=${encodedSubject}&body=${encodedBody}`;
+
+        // Abre o Gmail em uma nova aba com os dados preenchidos
+        window.open(gmailUrl, '_blank');
+    });
+
+});
+        
+        
         // Lógica do Menu Mobile
         const menuToggle = document.querySelector('.menu-toggle');
         const navMenu = document.querySelector('.nav-menu');
