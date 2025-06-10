@@ -20,6 +20,10 @@
          url('font/Omicron.ttf') format('woff'); 
 }
 
+.central {
+    text-decoration: none;
+}
+
 .becafig {
     color: yellow;
     text-decoration: none;
