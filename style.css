@@ -152,7 +152,7 @@ section { padding: 60px 0; }
 .ssl-badge { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; }
 
 /* ESTILOS DO CHATBOT */
-.chatbot-icon { position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; background: var(--blue);; color: white; display: flex; justify-content: center; align-items: center; border-radius: 50%; font-size: 1.8rem; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000; transition: transform 0.3s ease; }
+.chatbot-icon { position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; background: linear-gradient(86deg, #0065ff, #002566); color: white; display: flex; justify-content: center; align-items: center; border-radius: 50%; font-size: 1.8rem; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000; transition: transform 0.3s ease; }
 .chatbot-icon:hover { transform: scale(1.1); }
 .chat-window { position: fixed; bottom: 100px; right: 25px; width: 350px; max-width: 90vw; height: 500px; background: var(--white); border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: flex; flex-direction: column; overflow: hidden; z-index: 1001; opacity: 0; transform: translateY(20px); transition: opacity 0.3s ease, transform 0.3s ease; pointer-events: none; }
 .chat-window.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
