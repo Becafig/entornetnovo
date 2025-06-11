@@ -11,25 +11,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="logo/entorlogo.png" type="image/x-icon">
     <link rel="icon" href="logo/entorlogo.png" type="favicon" sizes="42x42">
-        <meta name="description" content="Entornet Fibra - Provedor de internet em Casimiro de Abreu. Oferecemos planos de alta velocidade com 100% fibra óptica e excelente atendimento. Conexões rápidas e confiáveis.">
-        <link rel="canonical" href="http://www.entornet.com.br/">
-        <meta property="og:image" content="https://entornet.com.br/logo/entorlogo.png" />
-        <meta property="og:image:alt" content="Logo Entornet Fibra" />
-        <meta property="og:locale" content="pt_BR">
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="Entornet Fibra | Provedor de Internet em Casimiro de Abreu">
-        <meta name="description" content="O provedor de internet Fibra com melhor atendimento em Casimiro de Abreu, planos de alta velocidade, garantia de qualidade, 100% fibra óptica.">
-        <meta property="og:url" content="http://www.entornet.com.br/">
-        <meta property="og:site_name" content="Entornet Fibra">
-        <meta property="article:publisher" content="https://www.facebook.com/entornetbandalarga/">
-        <meta property="article:modified_time" content="2024-09-25T00:00:00+00:00">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="@entornetfibra">
-        <meta name="twitter:image" content="https://www.entornet.com.br/images/twitter-image.jpg">
-        <meta name="instagram:site" content="https://www.instagram.com/entornetbandalarga/">
-        <meta name="keywords" content="provedor de internet, internet rápida, fibra óptica, internet Casimiro de Abreu, melhor provedor de internet, Entornet, internet residencial, internet empresarial, internet rural, Casimiro de Abreu, conexão estável, internet segura, planos de internet, atendimento ao cliente, provedores de internet RJ">
 </head>
-<body>
+<body class="theme-residential"> <!-- Classe inicial do tema -->
 
     <!-- CABEÇALHO -->
     <header class="header">
@@ -41,7 +24,7 @@
         <nav class="header-main container">
             <a href="#" class="logo">entornet fibra</a>
             <ul class="nav-menu">
-                <li><a href="">Início</a></li>
+                <li><a href="#inicio">Início</a></li>
                 <li><a href="#planos">Planos</a></li>
                 <li><a href="#cobertura">Cobertura</a></li>
                 <li><a href="#diagnostico">Diagnóstico</a></li>
@@ -55,51 +38,90 @@
 
     <main>
 
-        <!-- SEÇÃO 1 – HERO -->
+        <!-- SEÇÃO 1 – HERO (COM IMAGEM DINÂMICA) -->
         <section id="inicio" class="hero-section">
             <div class="container hero-content">
                 <div class="hero-text">
-                    <h1>Internet Fibra Óptica em Casimiro de Abreu</h1>
-                    <p>Navegue com velocidade e estabilidade de verdade. Ideal para streaming, jogos online e home office sem interrupções.</p>
+                    <h1 id="hero-title">A melhor internet fibra da sua cidade</h1>
+                    <p id="hero-subtitle">Navegue com velocidade e estabilidade de verdade. Ideal para streaming, jogos online e home office sem interrupções.</p>
                     <div class="hero-buttons">
                         <a href="#planos" class="btn btn-cta">Ver Planos</a>
                         <button id="open-recommender-btn" class="btn btn-secondary">✨ Não sabe qual plano escolher?</button>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Mulher feliz usando notebook com internet rápida em casa" onerror="this.onerror=null;this.src='https://placehold.co/600x400/2ecc71/ffffff?text=Internet+R%C3%A1pida';">
+                    <img id="hero-image-dynamic" src="https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Mulher feliz usando notebook com internet rápida em casa" onerror="this.onerror=null;this.src='https://placehold.co/600x400/2ecc71/ffffff?text=Internet+R%C3%A1pida';">
                 </div>
             </div>
         </section>
 
-        <!-- SEÇÃO 2 – BENEFÍCIOS -->
+        <!-- SEÇÃO 2 – BENEFÍCIOS (DINÂMICOS) -->
         <section id="beneficios" class="benefits-section">
             <div class="container">
                 <h2>Por que nossa fibra é a escolha certa?</h2>
                 <div class="benefits-grid">
-                    <div class="benefit-item"><i class="fa-solid fa-rocket"></i><h3>Velocidade Garantida</h3><p>Receba 100% da velocidade contratada, sem pegadinhas ou letras miúdas.</p></div>
-                    <div class="benefit-item"><i class="fa-solid fa-headset"></i><h3>Suporte 13/7 horas</h3><p>Nossa equipe está sempre pronta para te ajudar, durante todo o nosso horário comercial.</p></div>
-                    <div class="benefit-item"><i class="fa-solid fa-map-location-dot"></i><h3>Cobertura Local</h3><p>Atendimento em Casimiro de Abreu, Professor Souza e Visconde.</p></div>
-                    <div class="benefit-item"><i class="fa-solid fa-bolt"></i><h3>Instalação Rápida</h3><p>Agende a visita e tenha sua internet instalada por técnicos especializados.</p></div>
+                    <div class="benefit-item">
+                        <i id="benefit-icon-1" class="fa-solid fa-rocket"></i>
+                        <h3 id="benefit-title-1">Velocidade Garantida</h3>
+                        <p id="benefit-desc-1">Receba 100% da velocidade contratada, sem pegadinhas ou letras miúdas.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i id="benefit-icon-2" class="fa-solid fa-headset"></i>
+                        <h3 id="benefit-title-2">Suporte 13/7 horas</h3>
+                        <p id="benefit-desc-2">Nossa equipe está sempre pronta para te ajudar, durante todo o nosso horário comercial.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i id="benefit-icon-3" class="fa-solid fa-map-location-dot"></i>
+                        <h3 id="benefit-title-3">Cobertura Local</h3>
+                        <p id="benefit-desc-3">Atendimento em Casimiro de Abreu, Professor Souza e Visconde.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i id="benefit-icon-4" class="fa-solid fa-bolt"></i>
+                        <h3 id="benefit-title-4">Instalação Rápida</h3>
+                        <p id="benefit-desc-4">Agende a visita e tenha sua internet instalada por técnicos especializados.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- SEÇÃO 3 – PLANOS E OFERTAS -->
+        <!-- SEÇÃO 3 – PLANOS E OFERTAS (NOVA ESTRUTURA) -->
         <section id="planos" class="plans-section">
             <div class="container">
                 <h2>Nossos planos de Fibra</h2>
-                <p class="section-subtitle">Todos os planos acompanham roteador Wi-Fi AC Gigabits em comodato, garantindo a melhor performance na sua casa.</p>
-                <div class="plans-grid">
-                    <div class="plan-card"><div class="plan-header plan-header-blue"><h3>50 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>79,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Ideal para redes sociais e músicas</li><li><i class="fa-solid fa-check"></i> Até 2 pessoas conectadas</li><li><i class="fa-solid fa-check"></i> Roteador AC Giga incluso</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
-                    <div class="plan-card"><div class="plan-header plan-header-purple"><h3>100 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>89,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Perfeito para vídeos e filmes em HD</li><li><i class="fa-solid fa-check"></i> Home office sem travamentos</li><li><i class="fa-solid fa-check"></i> Roteador AC Giga incluso</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
-                    <div class="plan-card popular"><div class="popular-badge">MAIS VENDIDO</div><div class="plan-header plan-header-yellow"><h3>300 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>99,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Família conectada em 4K</li><li><i class="fa-solid fa-check"></i> Ótimo para jogos online</li><li><i class="fa-solid fa-check"></i> Roteador AC Giga incluso</li></ul><a href="#assine" class="btn btn-primary">Assinar</a></div>
-                    <div class="plan-card"><div class="plan-header plan-header-darkblue"><h3>500 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>139,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Performance máxima para tudo</li><li><i class="fa-solid fa-check"></i> Para gamers e streamers exigentes</li><li><i class="fa-solid fa-check"></i> Roteador AC Giga incluso</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
+                
+                <!-- Abas de Navegação dos Planos -->
+                <div class="plan-tabs">
+                    <button class="tab-btn active" data-plan="residential">Residencial</button>
+                    <button class="tab-btn" data-plan="gamer">Gamer</button>
+                    <button class="tab-btn" data-plan="empresarial">Empresarial</button>
                 </div>
+
+                <!-- Planos Residenciais -->
+                <div class="plans-grid residential active">
+                    <div class="plan-card"><div class="plan-header plan-header-blue"><h3>200 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>89,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Perfeito para vídeos e filmes em HD</li><li><i class="fa-solid fa-check"></i> Home office sem travamentos</li><li><i class="fa-solid fa-check"></i> Roteador AC Giga incluso</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
+                    <div class="plan-card popular"><div class="popular-badge">MAIS VENDIDO</div><div class="plan-header plan-header-yellow"><h3>500 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>99,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Família conectada em 4K</li><li><i class="fa-solid fa-check"></i> Ótimo para jogos online</li><li><i class="fa-solid fa-check"></i> Roteador AC Giga incluso</li></ul><a href="#assine" class="btn btn-primary">Assinar</a></div>
+                    <div class="plan-card"><div class="plan-header plan-header-purple"><h3>650 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>129,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Vários dispositivos em 4K</li><li><i class="fa-solid fa-check"></i> Downloads ultra-rápidos</li><li><i class="fa-solid fa-check"></i> Roteador AC Giga incluso</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
+                    <div class="plan-card"><div class="plan-header plan-header-darkblue"><h3>930 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>189,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Performance máxima para tudo</li><li><i class="fa-solid fa-check"></i> Para casas inteligentes e exigentes</li><li><i class="fa-solid fa-check"></i> Roteador AC Giga incluso</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
+                </div>
+
+                <!-- Planos Gamer -->
+                <div class="plans-grid gamer">
+                    <div class="plan-card"><div class="plan-header gamer-1"><h3>500 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>119,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Roteador Wi-Fi 6 incluso</li><li><i class="fa-solid fa-check"></i> DNS prioritário para baixa latência</li><li><i class="fa-solid fa-check"></i> Ping otimizado</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
+                    <div class="plan-card popular"><div class="popular-badge">MAIS VENDIDO</div><div class="plan-header gamer-2"><h3>650 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>159,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Roteador Wi-Fi 6 incluso</li><li><i class="fa-solid fa-check"></i> DNS prioritário para baixa latência</li><li><i class="fa-solid fa-check"></i> Cabo RJ-45 blindado</li></ul><a href="#assine" class="btn btn-primary">Assinar</a></div>
+                    <div class="plan-card"><div class="plan-header gamer-3"><h3>930 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>219,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Roteador Wi-Fi 6 incluso</li><li><i class="fa-solid fa-check"></i> DNS prioritário e suporte exclusivo</li><li><i class="fa-solid fa-check"></i> Cabo RJ-45 blindado</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
+                </div>
+
+                <!-- Planos Empresariais -->
+                <div class="plans-grid empresarial">
+                    <div class="plan-card"><div class="plan-header enterprise-1"><h3>200 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>159,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Suporte com prazo de 08 horas</li><li><i class="fa-solid fa-check"></i> Monitoramento 24/7 da conexão</li><li><i class="fa-solid fa-check"></i> IP Fixo Público</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
+                    <div class="plan-card popular"><div class="popular-badge">MAIS VENDIDO</div><div class="plan-header enterprise-2"><h3>500 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>199,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Suporte com prazo de 08 horas</li><li><i class="fa-solid fa-check"></i> Técnicos especializados e IP Fixo</li><li><i class="fa-solid fa-check"></i> Monitoramento 24/7 da conexão</li></ul><a href="#assine" class="btn btn-primary">Assinar</a></div>
+                    <div class="plan-card"><div class="plan-header enterprise-3"><h3>650 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>229,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Suporte Prioritário e IP Fixo</li><li><i class="fa-solid fa-check"></i> Auxílio técnico para equipamentos</li><li><i class="fa-solid fa-check"></i> Monitoramento 24/7 da conexão</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
+                </div>
+
             </div>
         </section>
         
-        <!-- SEÇÃO 4 – COBERTURA -->
+        <!-- (Restante do HTML) -->
         <section id="cobertura" class="coverage-section">
             <div class="container coverage-content">
                 <div class="coverage-form">
@@ -115,8 +137,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- SEÇÃO 5 – ASSINE AGORA -->
         <section id="assine" class="signup-section">
             <div class="container">
                 <h2>Falta pouco para você ter a melhor conexão!</h2>
@@ -127,30 +147,32 @@
                     <input type="tel" id="signup-phone" placeholder="Telefone com WhatsApp" required>
                     <select id="signup-plan" required>
                         <option value="" disabled selected>Selecione o plano desejado</option>
-                        <option value="50 MEGA - R$79,90/mês">50 MEGA - R$79,90/mês</option>
-                        <option value="100 MEGA - R$89,90/mês">100 MEGA - R$89,90/mês</option>
-                        <option value="300 MEGA - R$99,90/mês">300 MEGA - R$99,90/mês</option>
-                        <option value="500 MEGA - R$139,90/mês">500 MEGA - R$139,90/mês</option>
+                        <option value="Residencial: 200 MEGA - R$89,90/mês">Residencial: 200 MEGA - R$89,90/mês</option>
+                        <option value="Residencial: 500 MEGA - R$99,90/mês">Residencial: 500 MEGA - R$99,90/mês</option>
+                        <option value="Residencial: 650 MEGA - R$129,90/mês">Residencial: 650 MEGA - R$129,90/mês</option>
+                        <option value="Residencial: 930 MEGA - R$189,90/mês">Residencial: 930 MEGA - R$189,90/mês</option>
+                        <option value="Gamer: 500 MEGA - R$119,90/mês">Gamer: 500 MEGA - R$119,90/mês</option>
+                        <option value="Gamer: 650 MEGA - R$159,90/mês">Gamer: 650 MEGA - R$159,90/mês</option>
+                        <option value="Gamer: 930 MEGA - R$219,90/mês">Gamer: 930 MEGA - R$219,90/mês</option>
+                        <option value="Empresarial: 200 MEGA - R$159,90/mês">Empresarial: 200 MEGA - R$159,90/mês</option>
+                        <option value="Empresarial: 500 MEGA - R$199,90/mês">Empresarial: 500 MEGA - R$199,90/mês</option>
+                        <option value="Empresarial: 650 MEGA - R$229,90/mês">Empresarial: 650 MEGA - R$229,90/mês</option>
                     </select>
-                    <button type="submit" class="btn btn-cta">Finalizar Contratação</button>
+                    <a id="submit-signup-link" href="#" class="btn btn-cta is-disabled">Finalizar Contratação</a>
                     <a href="https://wa.me/552227781113" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Prefiro falar com um especialista</a>
                 </form>
             </div>
         </section>
-
-        <!-- SEÇÃO 6 – SUPORTE -->
         <section id="suporte" class="support-section">
             <div class="container">
                 <h2>Precisa de ajuda? Fale conosco!</h2>
                 <div class="support-grid">
                     <div class="support-item"><i class="fa-brands fa-whatsapp"></i><h3>WhatsApp</h3><p>(22) 2778-1113</p><small>Seg a dom</small></div>
-                    <div class="support-item"><i class="fa-solid fa-phone-volume"></i><h3>Financeiro</h3><p>(22) 98851-0037</p><small>Atendimento seg a sab</small></div>
-                    <div class="support-item"><i class="fa-solid fa-envelope-open-text"></i><h3>E-mail</h3><p>atendimento@entornet.com.br</p><small>Respostas em até 24h úteis</small></div>
+                    <div class="support-item"><i class="fa-solid fa-phone-volume"></i><h3>Financeiro</h3><p>(22) 99200-9993</p><small>Atendimento seg a sab</small></div>
+                    <div class="support-item"><i class="fa-solid fa-envelope-open-text"></i><h3>E-mail</h3><p>suporte@entornet.com.br</p><small>Respostas em até 24h úteis</small></div>
                 </div>
             </div>
         </section>
-
-        <!-- SEÇÃO 7 – DIAGNÓSTICO -->
         <section id="diagnostico" class="diagnostics-section">
             <div class="container">
                 <h2><i class="fa-solid fa-wand-magic-sparkles"></i> Técnico Virtual</h2>
@@ -162,8 +184,6 @@
                 <div id="diagnostics-result" class="gemini-result"></div>
             </div>
         </section>
-        
-        <!-- SEÇÃO 8 – ÁREA DO CLIENTE -->
         <section id="cliente" class="customer-area">
              <div class="container customer-content">
                 <div class="customer-icon"><i class="fa-solid fa-lock"></i></div>
@@ -171,8 +191,6 @@
                 <form class="customer-form"><a class="btn btn-primary" href="http://ispadmin.entornet.com.br/prod/src/central/logincentral.php">Central do Assinante</a></form>
              </div>
         </section>
-
-        <!-- SEÇÃO 9 – DEPOIMENTOS -->
         <section id="depoimentos" class="testimonials-section">
             <div class="container">
                 <h2>O que nossos clientes dizem</h2>
@@ -184,14 +202,10 @@
             </div>
         </section>
     </main>
-
-    <!-- RODAPÉ -->
     <footer class="footer">
         <div class="container footer-grid"><div class="footer-col"><a href="#" class="logo">entornet fibra</a><p>Onde a internet se transforma em conexão de verdade.</p><div class="social-icons"><a href="https://www.instagram.com/entornetfibra"><i class="fa-brands fa-instagram"></i></a><a href="https://www.facebook.com/entornetbandalarga"><i class="fa-brands fa-facebook-f"></i></a><a href="https://wa.me/552227781113"><i class="fa-brands fa-whatsapp"></i></a></div></div><div class="footer-col"><h4>Links Rápidos</h4><ul><li><a href="#inicio">Início</a></li><li><a href="#planos">Planos</a></li><li><a href="#cobertura">Cobertura</a></li><li><a href="#diagnostico">Diagnóstico</a></li><li><a href="#suporte">Atendimento</a></li></ul></div><div class="footer-col"><h4>Contato</h4><p>Rua Waldenir heringer da silva, 120<br>Centro, Casimiro de Abreu - RJ</p></div><div class="footer-col"><h4>Legal</h4><ul><li><a href="#">Termos de Uso</a></li><li><a href="#">Política de Privacidade</a></li><li><a href="#">Contrato</a></li></ul></div></div>
-        <div class="footer-bottom"><p>© 2025 entornet fibra. Todos os direitos reservados. Feito por <a class="becafig" href="https://becafig.github.io/portfolio/" target="_blank">Lucas Figueiredo</a></p><div class="ssl-badge"><i class="fa-solid fa-shield-halved"></i> Site Seguro</div></div>
+        <div class="footer-bottom"><p>© 2025 entornet fibra. Todos os direitos reservados.</p><div class="ssl-badge"><i class="fa-solid fa-shield-halved"></i> Site Seguro</div></div>
     </footer>
-
-    <!-- CHATBOT E MODAL -->
     <div class="chatbot-icon" id="chatbot-icon"><i class="fa-solid fa-comments"></i></div>
     <div class="chat-window" id="chat-window">
         <div class="chat-header"><h3>Fale Conosco!</h3><button class="chat-close" id="chat-close">&times;</button></div>
@@ -204,17 +218,16 @@
             <h2>✨ Assistente de Planos Gemini</h2>
             <p>Responda algumas perguntas e encontraremos o plano perfeito para você!</p>
             <form id="recommender-form">
+                <label for="profile">Qual seu perfil de uso?</label>
+                <select id="profile">
+                    <option value="Residencial">Residencial</option>
+                    <option value="Gamer">Gamer</option>
+                    <option value="Empresarial">Empresarial</option>
+                </select>
                 <label for="people">Quantas pessoas usarão a internet?</label>
                 <input type="number" id="people" min="1" value="1">
                 <label for="devices">Quantos dispositivos (celulares, TVs, etc.) estarão conectados?</label>
                 <input type="number" id="devices" min="1" value="2">
-                <label for="usage">Qual será o principal uso da internet?</label>
-                <select id="usage">
-                    <option value="redes sociais e e-mails">Redes sociais e e-mails</option>
-                    <option value="streaming de vídeos e filmes em alta definição">Streaming de vídeos e filmes em HD/4K</option>
-                    <option value="jogos online e transmissões ao vivo">Jogos online e transmissões ao vivo</option>
-                    <option value="home office com videochamadas constantes">Home office com videochamadas</option>
-                </select>
                 <button type="submit" class="btn btn-primary">Recomendar Plano</button>
             </form>
             <div id="recommender-result" class="gemini-result"></div>
@@ -222,103 +235,5 @@
     </div>
 
     <script src="script.js"></script>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Entornet Fibra",
-  "image": "https://entornet.com.br/logo/entorlogo.png",
-  "url": "https://www.entornet.com.br/",
-  "telephone": "+552227781113",
-  "description": "Provedor de internet 100% fibra óptica em Casimiro de Abreu, RJ, com planos de alta velocidade e atendimento de qualidade para conexões rápidas e estáveis.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Rua Waldenir Heringer da Silva, 120",
-    "addressLocality": "Casimiro de Abreu",
-    "addressRegion": "RJ",
-    "postalCode": "28860-000",
-    "addressCountry": "BR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -22.4828,  
-    "longitude": -42.2033 
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      ],
-      "opens": "08:00",
-      "closes": "21:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Sunday",
-      "opens": "08:00",
-      "closes": "18:00"
-    }
-  ],
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Casimiro de Abreu"
-    },
-    {
-      "@type": "City",
-      "name": "Professor Souza"
-    },
-    {
-      "@type": "City",
-      "name": "Visconde"
-    }
-  ],
-  "makesOffer": [
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Plano de Internet Fibra 50 MEGA"
-      },
-      "price": "79.90",
-      "priceCurrency": "BRL"
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Plano de Internet Fibra 100 MEGA"
-      },
-      "price": "89.90",
-      "priceCurrency": "BRL"
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Plano de Internet Fibra 300 MEGA"
-      },
-      "price": "99.90",
-      "priceCurrency": "BRL"
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Plano de Internet Fibra 500 MEGA"
-      },
-      "price": "139.90",
-      "priceCurrency": "BRL"
-    }
-  ]
-}
-</script>
-
 </body>
 </html>
