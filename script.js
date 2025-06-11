@@ -123,7 +123,7 @@ Obrigado(a)!
 
         // --- LÓGICA DAS FEATURES GEMINI ---
 
-        const apiKey = "AIzaSyAzhXIpf500NeZdfl44Qjh5k7epNaa8WS8"; 
+        const apiKey = "AIzaSyAzhXIpf500NeZ"; 
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
         function showResult(element, text) {
