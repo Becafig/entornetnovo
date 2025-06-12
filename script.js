@@ -232,8 +232,8 @@ ${name}`;
                     const devices = document.getElementById('devices').value;
                     const recommenderResult = document.getElementById('recommender-result');
                     const prompt = `Aja como um especialista em vendas da entornet fibra. O cliente selecionou o perfil de uso '${profile}'. Nossa empresa atende APENAS em Casimiro de Abreu, Professor Souza e Visconde. 
-                    - Planos Residenciais: 200 Mega (R$89,90), 500 Mega (R$99,90), 650 Mega (R$129,90), 930 Mega (R$189,90).
-                    - Planos Gamer: 500 Mega (R$119,90), 650 Mega (R$159,90), 930 Mega (R$219,90), +1 GIGA (a partir de R$319,90). Vantagens: Wi-Fi 6, DNS prioritário, Ping otimizado.
+                    - Planos Residenciais: 200 Mega (R$89,90), 500 Mega (R$99,90), 650 Mega (R$129,90), 830 Mega (R$189,90).
+                    - Planos Gamer: 500 Mega (R$119,90), 650 Mega (R$159,90), 830 Mega (R$219,90), +1 GIGA (a partir de R$319,90). Vantagens: Wi-Fi 6, DNS prioritário, Ping otimizado.
                     - Planos Empresariais: 200 Mega (R$159,90), 500 Mega (R$199,90), 650 Mega (R$229,90), +1 GIGA (a partir de R$689,90). Vantagens: Suporte rápido, IP Fixo, Monitoramento 24/7.
                     Baseado no perfil, número de pessoas (${people}) e dispositivos (${devices}), recomende o melhor plano dentro da categoria escolhida e explique o porquê de forma curta e amigável.`;
                     const errorMessage = "Desculpe, não foi possível fazer a recomendação. Tente novamente.";
