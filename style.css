@@ -157,7 +157,7 @@ section { padding: 95px 0; }
     background: var(--white);
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 40px rgb(0 0 0 / 15%);
 }
 .coverage-form { flex: 1; }
 .coverage-form h3 { font-size: 1.8rem; margin-bottom: 20px; }
