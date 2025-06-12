@@ -95,8 +95,8 @@ ${name}`;
                 residential: {
                     className: 'theme-residential',
                     image: 'https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                    title: 'A melhor internet fibra da sua cidade',
-                    subtitle: 'Navegue com velocidade e estabilidade de verdade. Ideal para streaming, jogos online e home office sem interrupções.'
+                    title: 'Há 18 anos MELHOR internet fibra da nossa cidade',
+                    subtitle: 'Navegue com velocidade e estabilidade de verdade. Conexão ideal para streaming, jogos online e home office — com qualidade comprovada e liderança incontestável.'
                 },
                 gamer: {
                     className: 'theme-gamer',
