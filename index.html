@@ -58,7 +58,7 @@
         <!-- SEÇÃO 2 – BENEFÍCIOS (DINÂMICOS) -->
         <section id="beneficios" class="benefits-section">
             <div class="container">
-                <h2>Por que nossa fibra é a escolha certa?</h2>
+                <h2 id="benefits-title">Por que nossa fibra é a escolha certa?</h2>
                 <div class="benefits-grid">
                     <div class="benefit-item">
                         <i id="benefit-icon-1" class="fa-solid fa-rocket"></i>
@@ -89,39 +89,36 @@
             <div class="container">
                 <h2>Nossos planos de Fibra</h2>
                 
-                <!-- Abas de Navegação dos Planos -->
                 <div class="plan-tabs">
                     <button class="tab-btn active" data-plan="residential">Residencial</button>
                     <button class="tab-btn" data-plan="gamer">Gamer</button>
                     <button class="tab-btn" data-plan="empresarial">Empresarial</button>
                 </div>
 
-                <!-- Planos Residenciais -->
-                <div class="plans-grid residential active">
-                    <div class="plan-card"><div class="plan-header plan-header-blue"><h3>200 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>89,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Perfeito para vídeos e filmes em HD</li><li><i class="fa-solid fa-check"></i> Home office sem travamentos</li><li><i class="fa-solid fa-check"></i> Roteador AC Giga incluso</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
-                    <div class="plan-card popular"><div class="popular-badge">MAIS VENDIDO</div><div class="plan-header plan-header-yellow"><h3>500 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>99,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Família conectada em 4K</li><li><i class="fa-solid fa-check"></i> Ótimo para jogos online</li><li><i class="fa-solid fa-check"></i> Roteador AC Giga incluso</li></ul><a href="#assine" class="btn btn-primary">Assinar</a></div>
-                    <div class="plan-card"><div class="plan-header plan-header-purple"><h3>650 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>129,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Vários dispositivos em 4K</li><li><i class="fa-solid fa-check"></i> Downloads ultra-rápidos</li><li><i class="fa-solid fa-check"></i> Roteador AC Giga incluso</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
-                    <div class="plan-card"><div class="plan-header plan-header-darkblue"><h3>930 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>189,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Performance máxima para tudo</li><li><i class="fa-solid fa-check"></i> Para casas inteligentes e exigentes</li><li><i class="fa-solid fa-check"></i> Roteador AC Giga incluso</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
+                <div class="plans-container">
+                    <div class="plans-grid residential active">
+                        <div class="plan-card"><div class="plan-header plan-header-blue"><h3>200 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>89,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Perfeito para vídeos e filmes em HD</li><li><i class="fa-solid fa-check"></i> Home office sem travamentos</li><li><i class="fa-solid fa-check"></i> Roteador AC Giga incluso</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
+                        <div class="plan-card popular"><div class="popular-badge">MAIS VENDIDO</div><div class="plan-header plan-header-yellow"><h3>500 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>99,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Família conectada em 4K</li><li><i class="fa-solid fa-check"></i> Ótimo para jogos online</li><li><i class="fa-solid fa-check"></i> Roteador AC Giga incluso</li></ul><a href="#assine" class="btn btn-primary">Assinar</a></div>
+                        <div class="plan-card"><div class="plan-header plan-header-purple"><h3>650 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>129,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Vários dispositivos em 4K</li><li><i class="fa-solid fa-check"></i> Downloads ultra-rápidos</li><li><i class="fa-solid fa-check"></i> Roteador AC Giga incluso</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
+                        <div class="plan-card"><div class="plan-header plan-header-darkblue"><h3>930 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>189,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Performance máxima para tudo</li><li><i class="fa-solid fa-check"></i> Para casas inteligentes e exigentes</li><li><i class="fa-solid fa-check"></i> Roteador AC Giga incluso</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
+                    </div>
+                    <div class="plans-grid gamer">
+                        <div class="plan-card"><div class="plan-header gamer-1"><h3>500 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>119,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Roteador Wi-Fi 6 incluso</li><li><i class="fa-solid fa-check"></i> DNS prioritário para baixa latência</li><li><i class="fa-solid fa-check"></i> Ping otimizado</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
+                        <div class="plan-card popular"><div class="popular-badge">MAIS VENDIDO</div><div class="plan-header gamer-2"><h3>650 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>159,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Roteador Wi-Fi 6 incluso</li><li><i class="fa-solid fa-check"></i> DNS prioritário para baixa latência</li><li><i class="fa-solid fa-check"></i> Cabo RJ-45 blindado</li></ul><a href="#assine" class="btn btn-primary">Assinar</a></div>
+                        <div class="plan-card"><div class="plan-header gamer-3"><h3>930 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>219,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Roteador Wi-Fi 6 incluso</li><li><i class="fa-solid fa-check"></i> DNS prioritário e suporte exclusivo</li><li><i class="fa-solid fa-check"></i> Cabo RJ-45 blindado</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
+                        <div class="plan-card plan-custom"><div class="plan-header gamer-1"><h3>Personalizado</h3></div><div class="plan-price"><span>R$</span><strong>319,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> + 1 GIGA</li><li><i class="fa-solid fa-check"></i> DNS e Rotas prioritárias</li><li><i class="fa-solid fa-check"></i> Roteadores MESH WIFI 6</li></ul><p class="plan-custom-text">Plano totalmente personalizado para sua necessidade. Seja Exclusivo!</p><a href="#assine" class="btn btn-secondary">Consultar</a></div>
+                    </div>
+                    <div class="plans-grid empresarial">
+                        <div class="plan-card"><div class="plan-header enterprise-1"><h3>200 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>159,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Suporte com prazo de 08 horas</li><li><i class="fa-solid fa-check"></i> Monitoramento 24/7 da conexão</li><li><i class="fa-solid fa-check"></i> IP Fixo Público</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
+                        <div class="plan-card popular"><div class="popular-badge">MAIS VENDIDO</div><div class="plan-header enterprise-2"><h3>500 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>199,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Suporte com prazo de 08 horas</li><li><i class="fa-solid fa-check"></i> Técnicos especializados e IP Fixo</li><li><i class="fa-solid fa-check"></i> Monitoramento 24/7 da conexão</li></ul><a href="#assine" class="btn btn-primary">Assinar</a></div>
+                        <div class="plan-card"><div class="plan-header enterprise-3"><h3>650 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>229,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Suporte Prioritário e IP Fixo</li><li><i class="fa-solid fa-check"></i> Auxílio técnico para equipamentos</li><li><i class="fa-solid fa-check"></i> Monitoramento 24/7 da conexão</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
+                        <div class="plan-card plan-custom"><div class="plan-header enterprise-1"><h3>Personalizado</h3></div><div class="plan-price"><span>R$</span><strong>689,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> + 1 GIGA</li><li><i class="fa-solid fa-check"></i> DNS e Rotas prioritárias</li><li><i class="fa-solid fa-check"></i> Roteadores MESH WIFI 6</li></ul><p class="plan-custom-text">Precisa de muito mais? Aqui você consegue, nem o céu é o limite!</p><a href="#assine" class="btn btn-secondary">Consultar</a></div>
+                    </div>
                 </div>
-
-                <!-- Planos Gamer -->
-                <div class="plans-grid gamer">
-                    <div class="plan-card"><div class="plan-header gamer-1"><h3>500 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>119,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Roteador Wi-Fi 6 incluso</li><li><i class="fa-solid fa-check"></i> DNS prioritário para baixa latência</li><li><i class="fa-solid fa-check"></i> Ping otimizado</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
-                    <div class="plan-card popular"><div class="popular-badge">MAIS VENDIDO</div><div class="plan-header gamer-2"><h3>650 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>159,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Roteador Wi-Fi 6 incluso</li><li><i class="fa-solid fa-check"></i> DNS prioritário para baixa latência</li><li><i class="fa-solid fa-check"></i> Cabo RJ-45 blindado</li></ul><a href="#assine" class="btn btn-primary">Assinar</a></div>
-                    <div class="plan-card"><div class="plan-header gamer-3"><h3>930 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>219,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Roteador Wi-Fi 6 incluso</li><li><i class="fa-solid fa-check"></i> DNS prioritário e suporte exclusivo</li><li><i class="fa-solid fa-check"></i> Cabo RJ-45 blindado</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
-                </div>
-
-                <!-- Planos Empresariais -->
-                <div class="plans-grid empresarial">
-                    <div class="plan-card"><div class="plan-header enterprise-1"><h3>200 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>159,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Suporte com prazo de 08 horas</li><li><i class="fa-solid fa-check"></i> Monitoramento 24/7 da conexão</li><li><i class="fa-solid fa-check"></i> IP Fixo Público</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
-                    <div class="plan-card popular"><div class="popular-badge">MAIS VENDIDO</div><div class="plan-header enterprise-2"><h3>500 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>199,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Suporte com prazo de 08 horas</li><li><i class="fa-solid fa-check"></i> Técnicos especializados e IP Fixo</li><li><i class="fa-solid fa-check"></i> Monitoramento 24/7 da conexão</li></ul><a href="#assine" class="btn btn-primary">Assinar</a></div>
-                    <div class="plan-card"><div class="plan-header enterprise-3"><h3>650 MEGA</h3></div><div class="plan-price"><span>R$</span><strong>229,90</strong><span>/mês</span></div><ul class="plan-features"><li><i class="fa-solid fa-check"></i> Suporte Prioritário e IP Fixo</li><li><i class="fa-solid fa-check"></i> Auxílio técnico para equipamentos</li><li><i class="fa-solid fa-check"></i> Monitoramento 24/7 da conexão</li></ul><a href="#assine" class="btn btn-secondary">Assinar</a></div>
-                </div>
-
             </div>
         </section>
         
-        <!-- (Restante do HTML) -->
+        <!-- SEÇÃO 4 – COBERTURA -->
         <section id="cobertura" class="coverage-section">
             <div class="container coverage-content">
                 <div class="coverage-form">
@@ -154,9 +151,11 @@
                         <option value="Gamer: 500 MEGA - R$119,90/mês">Gamer: 500 MEGA - R$119,90/mês</option>
                         <option value="Gamer: 650 MEGA - R$159,90/mês">Gamer: 650 MEGA - R$159,90/mês</option>
                         <option value="Gamer: 930 MEGA - R$219,90/mês">Gamer: 930 MEGA - R$219,90/mês</option>
+                        <option value="Gamer: +1 GIGA - A partir de R$319,90/mês">Gamer: +1 GIGA - A partir de R$319,90/mês</option>
                         <option value="Empresarial: 200 MEGA - R$159,90/mês">Empresarial: 200 MEGA - R$159,90/mês</option>
                         <option value="Empresarial: 500 MEGA - R$199,90/mês">Empresarial: 500 MEGA - R$199,90/mês</option>
                         <option value="Empresarial: 650 MEGA - R$229,90/mês">Empresarial: 650 MEGA - R$229,90/mês</option>
+                        <option value="Empresarial: +1 GIGA - A partir de R$689,90/mês">Empresarial: +1 GIGA - A partir de R$689,90/mês</option>
                     </select>
                     <a id="submit-signup-link" href="#" class="btn btn-cta is-disabled">Finalizar Contratação</a>
                     <a href="https://wa.me/552227781113" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Prefiro falar com um especialista</a>
@@ -188,7 +187,7 @@
              <div class="container customer-content">
                 <div class="customer-icon"><i class="fa-solid fa-lock"></i></div>
                 <div class="customer-info"><h2>Área do Cliente</h2><p>Acesse suas faturas, consumo e suporte técnico.</p></div>
-                <form class="customer-form"><a class="btn btn-primary" href="http://ispadmin.entornet.com.br/prod/src/central/logincentral.php">Central do Assinante</a></form>
+                <form class="customer-form" action="https://ixc.provedor.com.br/central_assinante_web/login" method="get" target="_blank"><input type="text" name="login" placeholder="CPF ou CNPJ"><input type="password" name="senha" placeholder="Senha"><button type="submit" class="btn btn-primary">Entrar</button></form>
              </div>
         </section>
         <section id="depoimentos" class="testimonials-section">
@@ -201,10 +200,6 @@
                 </div>
             </div>
         </section>
-    </main>
-    <footer class="footer">
-        <div class="container footer-grid"><div class="footer-col"><a href="#" class="logo">entornet fibra</a><p>Onde a internet se transforma em conexão de verdade.</p><div class="social-icons"><a href="https://www.instagram.com/entornetfibra"><i class="fa-brands fa-instagram"></i></a><a href="https://www.facebook.com/entornetbandalarga"><i class="fa-brands fa-facebook-f"></i></a><a href="https://wa.me/552227781113"><i class="fa-brands fa-whatsapp"></i></a></div></div><div class="footer-col"><h4>Links Rápidos</h4><ul><li><a href="#inicio">Início</a></li><li><a href="#planos">Planos</a></li><li><a href="#cobertura">Cobertura</a></li><li><a href="#diagnostico">Diagnóstico</a></li><li><a href="#suporte">Atendimento</a></li></ul></div><div class="footer-col"><h4>Contato</h4><p>Rua Waldenir heringer da silva, 120<br>Centro, Casimiro de Abreu - RJ</p></div><div class="footer-col"><h4>Legal</h4><ul><li><a href="#">Termos de Uso</a></li><li><a href="#">Política de Privacidade</a></li><li><a href="#">Contrato</a></li></ul></div></div>
-        <div class="footer-bottom"><p>© 2025 entornet fibra. Todos os direitos reservados.</p><div class="ssl-badge"><i class="fa-solid fa-shield-halved"></i> Site Seguro</div></div>
     </footer>
     <div class="chatbot-icon" id="chatbot-icon"><i class="fa-solid fa-comments"></i></div>
     <div class="chat-window" id="chat-window">
@@ -233,7 +228,8 @@
             <div id="recommender-result" class="gemini-result"></div>
         </div>
     </div>
-
+    
     <script src="script.js"></script>
+
 </body>
 </html>

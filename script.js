@@ -84,7 +84,7 @@ ${name}`;
                 });
             }
 
-            // --- LÓGICA DE TROCA DE PLANOS E TEMA (COM VANTAGENS DINÂMICAS) ---
+            // --- LÓGICA DE TROCA DE PLANOS E TEMA ---
             const planTabs = document.querySelector('.plan-tabs');
             const planGrids = document.querySelectorAll('.plans-grid');
             const heroImage = document.getElementById('hero-image-dynamic');
@@ -151,11 +151,7 @@ ${name}`;
                         e.target.classList.add('active');
                         
                         planGrids.forEach(grid => {
-                            if (grid.classList.contains(selectedPlan)) {
-                                grid.classList.add('active');
-                            } else {
-                                grid.classList.remove('active');
-                            }
+                            grid.classList.toggle('active', grid.classList.contains(selectedPlan));
                         });
 
                         document.body.className = themeData[selectedPlan].className;
@@ -169,112 +165,109 @@ ${name}`;
                     }
                 });
             }
-        });
 
-        // --- LÓGICA DAS FEATURES GEMINI ---
+            // --- LÓGICA DAS FEATURES GEMINI ---
+            const apiKey = "AIzaSyAzhXIpf500NeZdfl44Qjh5k7epNaa8WS8";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
-        const apiKey = "AIzaSyAzhXIpf500NeZdfl44Qjh5k7epNaa8WS8"; 
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-        function showResult(element, text) {
-            element.innerHTML = text;
-            element.classList.remove('loading');
-        }
-
-        function showLoading(element) {
-            element.innerHTML = '<div class="loader"></div>';
-            element.classList.add('loading');
-        }
-
-        async function callGemini(prompt, resultElement, errorMessage) {
-            showLoading(resultElement);
-            try {
-                const payload = { contents: [{ parts: [{ text: prompt }] }] };
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (!response.ok) {
-                    const errorData = await response.json();
-                    console.error("Erro da API Gemini:", errorData);
-                    throw new Error(`API Error: ${response.statusText}`);
-                }
-
-                const result = await response.json();
-
-                if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
-                    const text = result.candidates[0].content.parts[0].text.replace(/\n/g, '<br>');
-                    showResult(resultElement, text);
-                } else {
-                     console.error("Resposta inesperada da API:", result);
-                    if (result.promptFeedback && result.promptFeedback.blockReason) {
-                        throw new Error(`Conteúdo bloqueado: ${result.promptFeedback.blockReason}`);
-                    }
-                    throw new Error("Formato de resposta inesperado da API.");
-                }
-            } catch (error) {
-                console.error("Erro ao chamar a API Gemini:", error);
-                showResult(resultElement, errorMessage);
+            function showResult(element, text) {
+                element.innerHTML = text;
+                element.classList.remove('loading');
             }
-        }
 
-        // 1. Recomendador de Planos
-        const recommenderModal = document.getElementById('recommender-modal');
-        const openRecommenderBtn = document.getElementById('open-recommender-btn');
-        const closeRecommenderBtn = document.getElementById('close-recommender-modal');
-        const recommenderForm = document.getElementById('recommender-form');
+            function showLoading(element) {
+                element.innerHTML = '<div class="loader"></div>';
+                element.classList.add('loading');
+            }
 
-        openRecommenderBtn.addEventListener('click', () => recommenderModal.style.display = 'flex');
-        closeRecommenderBtn.addEventListener('click', () => recommenderModal.style.display = 'none');
-        window.addEventListener('click', (e) => {
-            if (e.target == recommenderModal) recommenderModal.style.display = 'none';
-        });
+            async function callGemini(prompt, resultElement, errorMessage) {
+                showLoading(resultElement);
+                try {
+                    const payload = { contents: [{ parts: [{ text: prompt }] }] };
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        console.error("Erro da API Gemini:", errorData);
+                        throw new Error(`API Error: ${response.statusText}`);
+                    }
+                    const result = await response.json();
+                    if (result.candidates && result.candidates[0].content.parts) {
+                        const text = result.candidates[0].content.parts[0].text.replace(/\n/g, '<br>');
+                        showResult(resultElement, text);
+                    } else {
+                        console.error("Resposta inesperada da API:", result);
+                        if (result.promptFeedback && result.promptFeedback.blockReason) {
+                            throw new Error(`Conteúdo bloqueado: ${result.promptFeedback.blockReason}`);
+                        }
+                        throw new Error("Formato de resposta inesperado da API.");
+                    }
+                } catch (error) {
+                    console.error("Erro ao chamar a API Gemini:", error);
+                    showResult(resultElement, errorMessage);
+                }
+            }
 
-        recommenderForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const people = document.getElementById('people').value;
-            const devices = document.getElementById('devices').value;
-            const usage = document.getElementById('usage').value;
-            const recommenderResult = document.getElementById('recommender-result');
-
-            const prompt = `Aja como um especialista em vendas da entornet fibra. Nossa empresa atende APENAS em Casimiro de Abreu, Professor Souza e Visconde. Nossos planos são: 50 Mega (R$79,90), 100 Mega (R$89,90), 300 Mega (R$99,90) e 500 Mega (R$139,90). Todos incluem roteador AC Giga. Baseado nos dados do cliente, recomende o melhor plano, explique o porquê de forma curta e amigável.
-            - Pessoas na casa: ${people}
-            - Dispositivos: ${devices}
-            - Uso principal: ${usage}
-            Formate a resposta de forma clara e use no máximo 60 palavras.`;
-
-            const errorMessage = "Desculpe, não foi possível fazer a recomendação. Tente novamente.";
-            callGemini(prompt, recommenderResult, errorMessage);
-        });
-
-        // 2. Verificador de Cobertura 
-        const coverageForm = document.getElementById('coverage-form-gemini');
-        coverageForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const location = document.getElementById('cep-input').value.toLowerCase();
-            if (!location) return;
-            const coverageResult = document.getElementById('coverage-result');
-
-            const prompt = `Aja como um atendente da entornet fibra. Nossa área de cobertura atual é somente em "casimiro de abreu", "professor souza" e "visconde". Também temos planos de expandir para "rio dourado" em breve. O cliente perguntou sobre a localidade: "${location}".
-            - Se a localidade mencionada for uma das três que atendemos, confirme a cobertura com entusiasmo.
-            - Se a localidade for "rio dourado", informe que chegaremos em breve com novidades.
-            - Se for qualquer outro lugar, informe educadamente que ainda não atendemos a região, mas que estamos expandindo.
-            Seja breve e amigável.`;
+            const recommenderModal = document.getElementById('recommender-modal');
+            const openRecommenderBtn = document.getElementById('open-recommender-btn');
+            const closeRecommenderBtn = document.getElementById('close-recommender-modal');
+            const recommenderForm = document.getElementById('recommender-form');
+            if (openRecommenderBtn) {
+                openRecommenderBtn.addEventListener('click', () => recommenderModal.style.display = 'flex');
+            }
+            if (closeRecommenderBtn) {
+                closeRecommenderBtn.addEventListener('click', () => recommenderModal.style.display = 'none');
+            }
+            window.addEventListener('click', (e) => {
+                if (e.target == recommenderModal) recommenderModal.style.display = 'none';
+            });
+            if (recommenderForm) {
+                recommenderForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const profile = document.getElementById('profile').value;
+                    const people = document.getElementById('people').value;
+                    const devices = document.getElementById('devices').value;
+                    const recommenderResult = document.getElementById('recommender-result');
+                    const prompt = `Aja como um especialista em vendas da entornet fibra. O cliente selecionou o perfil de uso '${profile}'. Nossa empresa atende APENAS em Casimiro de Abreu, Professor Souza e Visconde. 
+                    - Planos Residenciais: 200 Mega (R$89,90), 500 Mega (R$99,90), 650 Mega (R$129,90), 930 Mega (R$189,90).
+                    - Planos Gamer: 500 Mega (R$119,90), 650 Mega (R$159,90), 930 Mega (R$219,90), +1 GIGA (a partir de R$319,90). Vantagens: Wi-Fi 6, DNS prioritário, Ping otimizado.
+                    - Planos Empresariais: 200 Mega (R$159,90), 500 Mega (R$199,90), 650 Mega (R$229,90), +1 GIGA (a partir de R$689,90). Vantagens: Suporte rápido, IP Fixo, Monitoramento 24/7.
+                    Baseado no perfil, número de pessoas (${people}) e dispositivos (${devices}), recomende o melhor plano dentro da categoria escolhida e explique o porquê de forma curta e amigável.`;
+                    const errorMessage = "Desculpe, não foi possível fazer a recomendação. Tente novamente.";
+                    callGemini(prompt, recommenderResult, errorMessage);
+                });
+            }
             
-            const errorMessage = "Não conseguimos verificar sua localidade. Por favor, tente novamente.";
-            callGemini(prompt, coverageResult, errorMessage);
-        });
+            const coverageForm = document.getElementById('coverage-form-gemini');
+            if (coverageForm) {
+                coverageForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const location = document.getElementById('location-input').value.toLowerCase();
+                    if (!location) return;
+                    const coverageResult = document.getElementById('coverage-result');
+                    const prompt = `Aja como um atendente da entornet fibra. Nossa área de cobertura atual é somente em "casimiro de abreu", "professor souza" e "visconde". Também temos planos de expandir para "rio dourado" em breve. O cliente perguntou sobre a localidade: "${location}".
+                    - Se a localidade mencionada for uma das três que atendemos, confirme a cobertura com entusiasmo.
+                    - Se a localidade for "rio dourado", informe que chegaremos em breve com novidades.
+                    - Se for qualquer outro lugar, informe educadamente que ainda não atendemos a região, mas que estamos expandindo.
+                    Seja breve e amigável.`;
+                    const errorMessage = "Não conseguimos verificar sua localidade. Por favor, tente novamente.";
+                    callGemini(prompt, coverageResult, errorMessage);
+                });
+            }
 
-        // 3. Técnico Virtual
-        const diagnosticsForm = document.getElementById('diagnostics-form');
-        diagnosticsForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const problem = document.getElementById('problem-description').value;
-            if (!problem) return;
-            const diagnosticsResult = document.getElementById('diagnostics-result');
-            const prompt = `Aja como um técnico de suporte de internet da empresa entornet fibra. Um cliente descreveu o seguinte problema: "${problem}". Forneça de 2 a 3 passos simples e práticos que ele pode tentar para resolver o problema antes de ligar para o suporte técnico. Use uma linguagem clara, amigável e em formato de lista numerada.`;
-            const errorMessage = "Não foi possível realizar o diagnóstico. Por favor, contate nosso suporte via WhatsApp.";
-            callGemini(prompt, diagnosticsResult, errorMessage);
+            const diagnosticsForm = document.getElementById('diagnostics-form');
+            if(diagnosticsForm) {
+                diagnosticsForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const problem = document.getElementById('problem-description').value;
+                    if (!problem) return;
+                    const diagnosticsResult = document.getElementById('diagnostics-result');
+                    const prompt = `Aja como um técnico de suporte de internet da empresa entornet fibra. Um cliente descreveu o seguinte problema: "${problem}". Forneça de 2 a 3 passos simples e práticos que ele pode tentar para resolver o problema antes de ligar para o suporte técnico. Use uma linguagem clara, amigável e em formato de lista numerada.`;
+                    const errorMessage = "Não foi possível realizar o diagnóstico. Por favor, contate nosso suporte via WhatsApp.";
+                    callGemini(prompt, diagnosticsResult, errorMessage);
+                });
+            }
         });

@@ -109,6 +109,7 @@ section { padding: 95px 0; }
 .plan-header.enterprise-1 { background: var(--gradient-enterprise); }
 .plan-header.enterprise-2 { background: linear-gradient(45deg, #2c3e50, #34495e); }
 .plan-header.enterprise-3 { background: linear-gradient(45deg, #1d2a4e, #0a1a3d); }
+.plan-custom-text { padding: 0 30px 20px 30px; font-size: 0.9rem; font-style: italic; color: var(--text-gray); flex-grow: 1; }
 
 /* --- ESTILOS DE TEMA (CORRIGIDO) --- */
 .theme-residential { background-color: var(--white); }
